@@ -12,17 +12,17 @@
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
-      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/Serializable.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/ISerializable.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableColor.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableVector3.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializationUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/DTO.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableVector3.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oWXb0lCNdxm72O3wDzydyShXb3" />
@@ -66,7 +66,7 @@
       <option name="number" value="Default" />
       <option name="presentableId" value="Default" />
       <updated>1613403387684</updated>
-      <workItem from="1613403390596" duration="7282000" />
+      <workItem from="1613403390596" duration="8527000" />
     </task>
     <servers />
   </component>

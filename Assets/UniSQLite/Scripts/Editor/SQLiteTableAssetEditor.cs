@@ -14,12 +14,11 @@ namespace UniSQLite.Scripts.Editor
         public override void OnInspectorGUI()
         {
             SQLiteTableAsset asset = (SQLiteTableAsset) target;
-            DTO table = (DTO) asset.Table;
+            object table = asset.Table;
             
             foreach (PropertyInfo property in GetProperties(table))
             {
                 Type type = property.PropertyType;
-                Debug.Log(type.Name);
                 if (type == typeof(Vector3))
                     property.SetValue(asset.Table, EditorGUILayout.Vector3Field(property.Name, (Vector3) property.GetValue(asset.Table)));
             }
@@ -30,7 +29,7 @@ namespace UniSQLite.Scripts.Editor
                 asset.Delete();
         }
 
-        private IEnumerable<PropertyInfo> GetProperties(DTO table)
+        private IEnumerable<PropertyInfo> GetProperties(object table)
         {
             return table.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
                 .Where(x => !x.IsDefined(typeof(HideInInspector)));

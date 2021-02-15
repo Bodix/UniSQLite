@@ -5,11 +5,11 @@ using UnityEngine;
 
 namespace Example.Scripts
 {
-    [Serializable]
-    public class Entity : DTO
+    // [Serializable]
+    public class Entity
     {
         [NotNull, PrimaryKey, Unique]
-        [SerializeField]
+        // [HideInInspector]
         public int Id { get; set; }
         public string Name { get; set; }
         public Vector3 Positions { get; set; }
