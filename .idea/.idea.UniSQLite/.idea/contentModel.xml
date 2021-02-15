@@ -1,0 +1,43 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ContentModelStore">
+    <e p="C:\Users\Bogdan_Nikolayev\AppData\Local\JetBrains\Rider2020.3\extResources" t="IncludeRecursive" />
+    <e p="C:\Users\Bogdan_Nikolayev\AppData\Local\JetBrains\Rider2020.3\resharper-host\Local\Transient\Rider\v203\SolutionCaches\_UniSQLite.-1846317356.00" t="ExcludeRecursive" />
+    <e p="D:\Projects\UniSQLite" t="IncludeRecursive">
+      <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
+      <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
+      <e p="Assets" t="Include">
+        <e p="UniSQLite" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Assets" t="Include">
+              <e p="SQLiteDatabaseAsset.cs" t="Include" />
+              <e p="SQLiteTableAsset.cs" t="Include" />
+            </e>
+            <e p="Dispatcher" t="Include">
+              <e p="Singleton.cs" t="Include" />
+              <e p="UnityMainThreadDispatcher.cs" t="Include" />
+            </e>
+            <e p="Editor" t="Include">
+              <e p="SQLiteTableAssetEditor.cs" t="Include" />
+            </e>
+            <e p="ISQLiteDatabase.cs" t="Include" />
+            <e p="Mappers" t="Include">
+              <e p="Mapper.cs" t="Include" />
+              <e p="Vector3Mapper.cs" t="Include" />
+            </e>
+            <e p="SQLite" t="Include">
+              <e p="SQLite.cs" t="Include" />
+              <e p="SQLiteAsync.cs" t="Include" />
+            </e>
+            <e p="SQLiteDatabase.cs" t="Include" />
+            <e p="UniSQLite.cs" t="Include" />
+          </e>
+        </e>
+      </e>
+      <e p="obj" t="ExcludeRecursive" />
+      <e p="Packages" t="ExcludeRecursive" />
+      <e p="Temp\bin" t="ExcludeRecursive" />
+      <e p="UniSQLite.sln" t="IncludeFlat" />
+    </e>
+  </component>
+</project>
