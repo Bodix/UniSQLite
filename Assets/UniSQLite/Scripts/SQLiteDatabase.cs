@@ -6,7 +6,6 @@ using SQLite;
 using UniSQLite.Assets;
 using UnityEditor;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace UniSQLite.Scripts
 {
@@ -15,7 +14,8 @@ namespace UniSQLite.Scripts
         private readonly string name;
         private readonly string path;
 
-        private SQLiteDatabaseAsset asset;
+        private SQLiteDatabaseAsset _asset;
+        private SQLiteDatabaseAsset asset => _asset ? _asset : _asset = CreateAsset();
 
         public SQLiteDatabase(string path, bool useCopy = true)
         {
@@ -39,20 +39,8 @@ namespace UniSQLite.Scripts
 
         ~SQLiteDatabase()
         {
-            UnityMainThreadDispatcher.Instance.Enqueue(() => 
+            UnityMainThreadDispatcher.Instance.Enqueue(() =>
                 Debug.LogWarning(AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(asset))));
-        }
-
-        private SQLiteDatabaseAsset GetOrCreateAsset()
-        {
-            if (asset == null)
-            {
-                asset = ScriptableObject.CreateInstance<SQLiteDatabaseAsset>();
-
-                AssetDatabase.CreateAsset(asset, $"Assets/{name}.asset");
-            }
-
-            return asset;
         }
 
         public void ShowTable<T>(T model)
@@ -61,7 +49,7 @@ namespace UniSQLite.Scripts
             tableAssetScriptableObject.name = typeof(T).Name;
             tableAssetScriptableObject.Initialize(model);
 
-            AssetDatabase.AddObjectToAsset(tableAssetScriptableObject, GetOrCreateAsset());
+            AssetDatabase.AddObjectToAsset(tableAssetScriptableObject, CreateAsset());
             AssetDatabase.SaveAssets();
         }
 
@@ -128,6 +116,15 @@ namespace UniSQLite.Scripts
             {
                 sqliteConnection.DeleteAll<T>();
             }
+        }
+
+        private SQLiteDatabaseAsset CreateAsset()
+        {
+            SQLiteDatabaseAsset asset = ScriptableObject.CreateInstance<SQLiteDatabaseAsset>();
+
+            AssetDatabase.CreateAsset(asset, $"Assets/{name}.asset");
+
+            return asset;
         }
     }
 }
