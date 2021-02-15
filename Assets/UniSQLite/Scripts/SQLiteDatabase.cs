@@ -43,7 +43,7 @@ namespace UniSQLite.Scripts
                 Debug.LogWarning(AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(asset))));
         }
 
-        public void ShowTable<T>(T model)
+        public void ShowTable<T>(T model) where T : DTO
         {
             SQLiteTableAsset tableAssetScriptableObject = ScriptableObject.CreateInstance<SQLiteTableAsset>();
             tableAssetScriptableObject.name = typeof(T).Name;

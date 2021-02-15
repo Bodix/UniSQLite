@@ -7,6 +7,12 @@
       <e p="Assembly-CSharp-Editor.csproj" t="IncludeRecursive" />
       <e p="Assembly-CSharp.csproj" t="IncludeRecursive" />
       <e p="Assets" t="Include">
+        <e p="Example" t="Include">
+          <e p="Scripts" t="Include">
+            <e p="Entity.cs" t="Include" />
+            <e p="Example.cs" t="Include" />
+          </e>
+        </e>
         <e p="UniSQLite" t="Include">
           <e p="Scripts" t="Include">
             <e p="Assets" t="Include">
@@ -17,6 +23,7 @@
               <e p="Singleton.cs" t="Include" />
               <e p="UnityMainThreadDispatcher.cs" t="Include" />
             </e>
+            <e p="DTO.cs" t="Include" />
             <e p="Editor" t="Include">
               <e p="SQLiteTableAssetEditor.cs" t="Include" />
             </e>
@@ -24,6 +31,12 @@
             <e p="Mappers" t="Include">
               <e p="Mapper.cs" t="Include" />
               <e p="Vector3Mapper.cs" t="Include" />
+            </e>
+            <e p="Serialization" t="Include">
+              <e p="ISerializable.cs" t="Include" />
+              <e p="SerializableColor.cs" t="Include" />
+              <e p="SerializableVector3.cs" t="Include" />
+              <e p="SerializationUtility.cs" t="Include" />
             </e>
             <e p="SQLite" t="Include">
               <e p="SQLite.cs" t="Include" />

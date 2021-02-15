@@ -1,4 +1,5 @@
-﻿using UnityEditor;
+﻿using UniSQLite.Scripts;
+using UnityEditor;
 using UnityEngine;
 
 namespace UniSQLite.Assets
@@ -8,14 +9,14 @@ namespace UniSQLite.Assets
         [SerializeReference]
         public object Table;
     
-        public void Initialize<T>(T table)
+        public void Initialize<T>(T table) where T : DTO
         {
             Table = table;
         }
 
         public void Insert()
         {
-            Debug.Log("insert");
+            Debug.Log("Insert");
         }
 
         public void Delete()

@@ -1,4 +1,8 @@
-﻿using UniSQLite.Assets;
+﻿using System;
+using System.Collections.Generic;
+using System.Linq;
+using System.Reflection;
+using UniSQLite.Assets;
 using UnityEditor;
 using UnityEngine;
 
@@ -9,12 +13,27 @@ namespace UniSQLite.Scripts.Editor
     {
         public override void OnInspectorGUI()
         {
-            base.OnInspectorGUI();
+            SQLiteTableAsset asset = (SQLiteTableAsset) target;
+            DTO table = (DTO) asset.Table;
+            
+            foreach (PropertyInfo property in GetProperties(table))
+            {
+                Type type = property.PropertyType;
+                Debug.Log(type.Name);
+                if (type == typeof(Vector3))
+                    property.SetValue(asset.Table, EditorGUILayout.Vector3Field(property.Name, (Vector3) property.GetValue(asset.Table)));
+            }
 
             if (GUILayout.Button("Insert"))
-                ((SQLiteTableAsset) target).Insert();
+                asset.Insert();
             if (GUILayout.Button("Delete"))
-                ((SQLiteTableAsset) target).Delete();
+                asset.Delete();
+        }
+
+        private IEnumerable<PropertyInfo> GetProperties(DTO table)
+        {
+            return table.GetType().GetProperties(BindingFlags.Instance | BindingFlags.Public)
+                .Where(x => !x.IsDefined(typeof(HideInInspector)));
         }
     }
 }
