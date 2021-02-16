@@ -6,7 +6,9 @@ using UniSQLite.Mappers;
 namespace UniSQLite
 {
     // TO DO:
-    // Make support for built-in types.
+    // 1. Make support for property fields with built-in types in asset editor.
+    // 2. Make reverting method with re-getting all rows.
+    // 3. Make auto-destruction of playmode assets after recompiling too.
 
     public static class UniSQLite
     {

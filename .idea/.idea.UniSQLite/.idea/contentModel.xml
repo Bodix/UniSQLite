@@ -26,7 +26,6 @@
                 <e p="SQLiteTableAssetEditor.cs" t="Include" />
               </e>
             </e>
-            <e p="ISQLiteDatabase.cs" t="Include" />
             <e p="Mappers" t="Include">
               <e p="Mapper.cs" t="Include" />
               <e p="Vector3Mapper.cs" t="Include" />

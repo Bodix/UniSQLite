@@ -24,22 +24,23 @@
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializationUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/DTO.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUICustom.cs" />
-      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/ISQLiteDatabase.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUILayoutCustom.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Dispatcher/UnityMainThreadDispatcher.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Dispatcher/Singleton.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteDatabaseAssetEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/Editors/SQLiteDatabaseAssetEditor.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLite/SQLite.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Mappers/Mapper.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Mappers/Vector3Mapper.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/ISQLiteDatabase.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/Editors/SQLiteTableAssetEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteDatabaseAsset.cs" />
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Mappers/Vector3Mapper.cs" />
+      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oWXb0lCNdxm72O3wDzydyShXb3" />

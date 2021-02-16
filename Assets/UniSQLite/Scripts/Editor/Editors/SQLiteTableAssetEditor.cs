@@ -20,8 +20,10 @@ namespace UniSQLite.Editor.Editors
                     foreach (PropertyInfo property in GetProperties(row))
                         EditorGUILayoutCustom.PropertyInfoField(property, row);
 
-            if (GUILayout.Button("Insert"))
-                asset.Insert();
+            if (GUILayout.Button("Update"))
+                asset.Update();
+            if (GUILayout.Button("Revert"))
+                asset.Revert();
         }
 
         private IEnumerable<PropertyInfo> GetProperties(object table)
