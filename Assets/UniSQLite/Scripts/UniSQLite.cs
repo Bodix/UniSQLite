@@ -1,11 +1,15 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UniSQLite.Scripts.Mappers;
+using UniSQLite.Dispatcher;
+using UniSQLite.Mappers;
 using UnityEditor;
 
 namespace UniSQLite
 {
+    // TO DO:
+    // Make support for built-in types.
+    
     [InitializeOnLoad]
     public static class UniSQLite
     {

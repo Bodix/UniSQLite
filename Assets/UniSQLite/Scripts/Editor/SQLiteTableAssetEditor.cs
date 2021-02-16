@@ -1,12 +1,11 @@
-﻿using System;
-using System.Collections.Generic;
+﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
-using UniSQLite.Assets;
 using UnityEditor;
 using UnityEngine;
+using UniSQLite.Assets;
 
-namespace UniSQLite.Scripts.Editor
+namespace UniSQLite.Editor
 {
     [CustomEditor(typeof(SQLiteTableAsset))]
     public class SQLiteTableAssetEditor : UnityEditor.Editor
@@ -16,12 +15,8 @@ namespace UniSQLite.Scripts.Editor
             SQLiteTableAsset asset = (SQLiteTableAsset) target;
             object table = asset.Table;
             
-            foreach (PropertyInfo property in GetProperties(table))
-            {
-                Type type = property.PropertyType;
-                if (type == typeof(Vector3))
-                    property.SetValue(asset.Table, EditorGUILayout.Vector3Field(property.Name, (Vector3) property.GetValue(asset.Table)));
-            }
+            foreach (PropertyInfo property in GetProperties(table)) 
+                EditorGUILayoutCustom.PropertyInfoField(property, asset.Table);
 
             if (GUILayout.Button("Insert"))
                 asset.Insert();

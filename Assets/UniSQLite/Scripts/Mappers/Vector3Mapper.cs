@@ -2,7 +2,7 @@
 using System.Linq;
 using UnityEngine;
 
-namespace UniSQLite.Scripts.Mappers
+namespace UniSQLite.Mappers
 {
     public class Vector3Mapper : Mapper<Vector3>
     {

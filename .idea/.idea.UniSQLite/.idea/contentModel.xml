@@ -23,20 +23,14 @@
               <e p="Singleton.cs" t="Include" />
               <e p="UnityMainThreadDispatcher.cs" t="Include" />
             </e>
-            <e p="DTO.cs" t="Include" />
             <e p="Editor" t="Include">
+              <e p="EditorGUILayoutCustom.cs" t="Include" />
               <e p="SQLiteTableAssetEditor.cs" t="Include" />
             </e>
             <e p="ISQLiteDatabase.cs" t="Include" />
             <e p="Mappers" t="Include">
               <e p="Mapper.cs" t="Include" />
               <e p="Vector3Mapper.cs" t="Include" />
-            </e>
-            <e p="Serialization" t="Include">
-              <e p="ISerializable.cs" t="Include" />
-              <e p="SerializableColor.cs" t="Include" />
-              <e p="SerializableVector3.cs" t="Include" />
-              <e p="SerializationUtility.cs" t="Include" />
             </e>
             <e p="SQLite" t="Include">
               <e p="SQLite.cs" t="Include" />

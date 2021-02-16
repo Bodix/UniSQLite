@@ -1,4 +1,4 @@
-﻿namespace UniSQLite.Scripts.Mappers
+﻿namespace UniSQLite.Mappers
 {
     public abstract class Mapper
     {

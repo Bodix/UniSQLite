@@ -2,7 +2,7 @@
 using System.Collections.Generic;
 using System.Linq.Expressions;
 
-namespace UniSQLite.Scripts
+namespace UniSQLite
 {
     public interface ISQLiteDatabase
     {

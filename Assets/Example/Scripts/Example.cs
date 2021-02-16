@@ -1,5 +1,5 @@
 ﻿using System.Linq;
-using UniSQLite.Scripts;
+using UniSQLite;
 using UnityEngine;
 using UnityEngine.UI;
 
@@ -20,7 +20,7 @@ namespace Example.Scripts
             SQLiteDatabase database = new SQLiteDatabase("database.db");
             database.ShowTable(database.GetAll<Entity>()[0]);
 
-            Debug.Log(string.Join(", ", database.GetAll<Entity>().Select(x => x.Id + "\n" + x.Name + "\n" + x.Positions)));
+            Debug.Log(string.Join(", ", database.GetAll<Entity>().Select(x => x.Id + "\n" + x.Name + "\n" + x.Position)));
         }
     }
 }

@@ -4,10 +4,11 @@ using System.IO;
 using System.Linq.Expressions;
 using SQLite;
 using UniSQLite.Assets;
+using UniSQLite.Dispatcher;
 using UnityEditor;
 using UnityEngine;
 
-namespace UniSQLite.Scripts
+namespace UniSQLite
 {
     public class SQLiteDatabase : ISQLiteDatabase
     {

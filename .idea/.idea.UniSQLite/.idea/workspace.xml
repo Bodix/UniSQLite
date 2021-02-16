@@ -8,21 +8,25 @@
     <option name="LAST_RESOLUTION" value="IGNORE" />
   </component>
   <component name="HighlightingSettingsPerFile">
-    <setting file="file://$PROJECT_DIR$/Assets/UniSQLite/Scripts/DTO.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="file://$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteDatabaseAsset.cs" root0="FORCE_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/Serializable.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/ISerializable.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableColor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableVector3.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializationUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/DTO.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUICustom.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
+      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
+      <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUILayoutCustom.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oWXb0lCNdxm72O3wDzydyShXb3" />
