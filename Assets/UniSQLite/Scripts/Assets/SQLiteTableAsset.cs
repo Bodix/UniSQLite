@@ -21,7 +21,7 @@ namespace UniSQLite.Assets
 
         public void Insert()
         {
-            database.InsertAll(Rows);
+            database.ReplaceAll(Rows);
         }
     }
 }

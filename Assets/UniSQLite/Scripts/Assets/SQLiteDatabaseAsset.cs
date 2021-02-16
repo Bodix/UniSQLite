@@ -5,17 +5,16 @@ namespace UniSQLite.Assets
 {
     public class SQLiteDatabaseAsset : ScriptableObject
     {
+        private bool playmodeOnly;
+        
         private void Awake()
         {
+            playmodeOnly = Application.isPlaying;
+            
             EditorApplication.playModeStateChanged += state =>
             {
-                Debug.Log(state);
-                if (state == PlayModeStateChange.ExitingPlayMode)
-                {
+                if (state == PlayModeStateChange.ExitingPlayMode && playmodeOnly) 
                     DeleteAsset();
-                    // DestroyImmediate(this, true);
-                    Debug.Log(this);
-                }
             };
         }
 

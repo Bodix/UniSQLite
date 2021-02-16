@@ -1,11 +1,11 @@
 ﻿using System.Collections.Generic;
 using System.Linq;
 using System.Reflection;
+using UniSQLite.Assets;
 using UnityEditor;
 using UnityEngine;
-using UniSQLite.Assets;
 
-namespace UniSQLite.Editor
+namespace UniSQLite.Editor.Editors
 {
     [CustomEditor(typeof(SQLiteTableAsset))]
     public class SQLiteTableAssetEditor : UnityEditor.Editor

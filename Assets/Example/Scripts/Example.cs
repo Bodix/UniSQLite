@@ -15,6 +15,7 @@ namespace Example.Scripts
             button.onClick.AddListener(GetEntities);
         }
 
+        [ContextMenu("Get entities")]
         public void GetEntities()
         {
             SQLiteDatabase database = new SQLiteDatabase("database.db");

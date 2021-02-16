@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.IO;
+using System.Linq;
 using System.Linq.Expressions;
 using UnityEditor;
 using UnityEngine;
@@ -104,6 +105,13 @@ namespace UniSQLite
             }
         }
 
+        public IEnumerable<T> ReplaceAll<T>(IEnumerable<T> data) where T : new()
+        {
+            DeleteAll(data.FirstOrDefault().GetType());
+            
+            return InsertAll(data);
+        }
+
         public IEnumerable<T> InsertAll<T>(IEnumerable<T> data) where T : new()
         {
             using (SQLiteConnection sqliteConnection = new SQLiteConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create))
@@ -119,6 +127,14 @@ namespace UniSQLite
             using (SQLiteConnection sqliteConnection = new SQLiteConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create))
             {
                 sqliteConnection.DeleteAll<T>();
+            }
+        }
+        
+        public void DeleteAll(Type type)
+        {
+            using (SQLiteConnection sqliteConnection = new SQLiteConnection(path, SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create))
+            {
+                sqliteConnection.DeleteAll(new TableMapping(type));
             }
         }
     }

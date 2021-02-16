@@ -13,18 +13,19 @@ namespace UniSQLite.Mappers
                 string[] vectorValues = text.Split(',').ToArray();
 
                 return new Vector3(
-                    float.Parse(vectorValues[0], CultureInfo.InvariantCulture.NumberFormat), 
-                    float.Parse(vectorValues[1], CultureInfo.InvariantCulture.NumberFormat), 
+                    float.Parse(vectorValues[0], CultureInfo.InvariantCulture.NumberFormat),
+                    float.Parse(vectorValues[1], CultureInfo.InvariantCulture.NumberFormat),
                     float.Parse(vectorValues[2], CultureInfo.InvariantCulture.NumberFormat));
-            } else
+            }
+            else
             {
                 return Vector3.zero;
             }
         }
 
-        protected override string Serialize(Vector3 @object)
+        protected override string Serialize(Vector3 obj)
         {
-            throw new System.NotImplementedException();
+            return obj.ToString().Replace("(", "").Replace(")", "");
         }
     }
 }

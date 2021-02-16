@@ -1,8 +1,8 @@
-﻿using UnityEditor;
+﻿using UniSQLite.Assets;
+using UnityEditor;
 using UnityEngine;
-using UniSQLite.Assets;
 
-namespace UniSQLite.Editor
+namespace UniSQLite.Editor.Editors
 {
     [CustomEditor(typeof(SQLiteDatabaseAsset))]
     public class SQLiteDatabaseAssetEditor : UnityEditor.Editor

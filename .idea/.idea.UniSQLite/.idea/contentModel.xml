@@ -21,8 +21,10 @@
             </e>
             <e p="Editor" t="Include">
               <e p="EditorGUILayoutCustom.cs" t="Include" />
-              <e p="SQLiteDatabaseAssetEditor.cs" t="Include" />
-              <e p="SQLiteTableAssetEditor.cs" t="Include" />
+              <e p="Editors" t="Include">
+                <e p="SQLiteDatabaseAssetEditor.cs" t="Include" />
+                <e p="SQLiteTableAssetEditor.cs" t="Include" />
+              </e>
             </e>
             <e p="ISQLiteDatabase.cs" t="Include" />
             <e p="Mappers" t="Include">

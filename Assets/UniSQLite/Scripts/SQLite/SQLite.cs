@@ -3139,6 +3139,10 @@ namespace SQLite
 				else if (value is UriBuilder) {
 					SQLite3.BindText (stmt, index, ((UriBuilder)value).ToString (), -1, NegativePointer);
 				}
+				else if (UniSQLite.UniSQLite.HasMapperFor(value.GetType()))
+				{
+					SQLite3.BindText (stmt, index, UniSQLite.UniSQLite.GetMapperFor(value.GetType()).GetString(value), -1, NegativePointer);
+				}
 				else {
 					// Now we could possibly get an enum, retrieve cached info
 					var valueType = value.GetType ();
