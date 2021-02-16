@@ -2,11 +2,10 @@
 using System.Collections.Generic;
 using System.IO;
 using System.Linq.Expressions;
-using SQLite;
-using UniSQLite.Assets;
-using UniSQLite.Dispatcher;
 using UnityEditor;
 using UnityEngine;
+using SQLite;
+using UniSQLite.Assets;
 
 namespace UniSQLite
 {
@@ -14,9 +13,6 @@ namespace UniSQLite
     {
         private readonly string name;
         private readonly string path;
-
-        private SQLiteDatabaseAsset _asset;
-        private SQLiteDatabaseAsset asset => _asset ? _asset : _asset = CreateAsset();
 
         public SQLiteDatabase(string path, bool useCopy = true)
         {
@@ -38,20 +34,27 @@ namespace UniSQLite
 #endif
         }
 
-        ~SQLiteDatabase()
+        public void ShowTable<T>() where T : new()
         {
-            UnityMainThreadDispatcher.Instance.Enqueue(() =>
-                Debug.LogWarning(AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(asset))));
-        }
+#if UNITY_EDITOR
+            T[] tableRows = GetAll<T>();
 
-        public void ShowTable<T>(T model)
-        {
             SQLiteTableAsset tableAssetScriptableObject = ScriptableObject.CreateInstance<SQLiteTableAsset>();
             tableAssetScriptableObject.name = typeof(T).Name;
-            tableAssetScriptableObject.Initialize(model);
+            tableAssetScriptableObject.Initialize(tableRows, this);
 
             AssetDatabase.AddObjectToAsset(tableAssetScriptableObject, CreateAsset());
             AssetDatabase.SaveAssets();
+            
+            SQLiteDatabaseAsset CreateAsset()
+            {
+                SQLiteDatabaseAsset asset = ScriptableObject.CreateInstance<SQLiteDatabaseAsset>();
+
+                AssetDatabase.CreateAsset(asset, $"Assets/{name}.asset");
+
+                return asset;
+            }
+#endif
         }
 
         public T Get<T>(Expression<Func<T, bool>> predicate = null) where T : new()
@@ -117,15 +120,6 @@ namespace UniSQLite
             {
                 sqliteConnection.DeleteAll<T>();
             }
-        }
-
-        private SQLiteDatabaseAsset CreateAsset()
-        {
-            SQLiteDatabaseAsset asset = ScriptableObject.CreateInstance<SQLiteDatabaseAsset>();
-
-            AssetDatabase.CreateAsset(asset, $"Assets/{name}.asset");
-
-            return asset;
         }
     }
 }

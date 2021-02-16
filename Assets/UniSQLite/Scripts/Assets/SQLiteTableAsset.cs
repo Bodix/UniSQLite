@@ -1,4 +1,5 @@
-﻿using Example.Scripts;
+﻿using System.Collections.Generic;
+using System.Linq;
 using UnityEditor;
 using UnityEngine;
 
@@ -7,21 +8,20 @@ namespace UniSQLite.Assets
     public class SQLiteTableAsset : ScriptableObject
     {
         [SerializeReference]
-        public object Table;
+        public object[] Rows;
 
-        public void Initialize<T>(T table)
+        private SQLiteDatabase database;
+
+        public void Initialize<T>(IEnumerable<T> rows, SQLiteDatabase database)
         {
-            Table = table;
+            Rows = rows.Select(x => (object)x).ToArray();
+
+            this.database = database;
         }
 
         public void Insert()
         {
-            Debug.Log(((Entity) Table).Position);
-        }
-
-        public void Delete()
-        {
-            Debug.Log(AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(this)));
+            database.InsertAll(Rows);
         }
     }
 }

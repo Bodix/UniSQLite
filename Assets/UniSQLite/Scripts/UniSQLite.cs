@@ -1,24 +1,16 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
-using UniSQLite.Dispatcher;
 using UniSQLite.Mappers;
-using UnityEditor;
 
 namespace UniSQLite
 {
     // TO DO:
     // Make support for built-in types.
-    
-    [InitializeOnLoad]
+
     public static class UniSQLite
     {
         private static Dictionary<Type, Mapper> _mappers;
-
-        static UniSQLite()
-        {
-            UnityMainThreadDispatcher.Logs = false;
-        }
 
         private static Dictionary<Type, Mapper> mappers =>
             _mappers ?? (_mappers = InitializeMapperTypes());
@@ -33,7 +25,7 @@ namespace UniSQLite
 
             Dictionary<Type, Mapper> mappersDictionary = new Dictionary<Type, Mapper>(mapperTypes.Length);
             foreach (Type mapperType in mapperTypes)
-                mappersDictionary.Add(mapperType.BaseType.GenericTypeArguments[0], (Mapper)Activator.CreateInstance(mapperType));
+                mappersDictionary.Add(mapperType.BaseType.GenericTypeArguments[0], (Mapper) Activator.CreateInstance(mapperType));
 
             return mappersDictionary;
         }

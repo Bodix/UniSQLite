@@ -10,6 +10,10 @@
   <component name="HighlightingSettingsPerFile">
     <setting file="file://$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" root0="FORCE_HIGHLIGHTING" />
     <setting file="file://$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteDatabaseAsset.cs" root0="FORCE_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
+    <setting file="mock:///Dummy.cs" root0="SKIP_HIGHLIGHTING" />
   </component>
   <component name="IdeDocumentHistory">
     <changedPaths>
@@ -19,14 +23,20 @@
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializableVector3.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Serialization/SerializationUtility.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/DTO.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUICustom.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/Entity.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Mappers/Vector3Mapper.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/ISQLiteDatabase.cs" />
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/EditorGUILayoutCustom.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteTableAssetEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Dispatcher/UnityMainThreadDispatcher.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Dispatcher/Singleton.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteTableAsset.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteDatabaseAsset.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/SQLiteDatabaseAssetEditor.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/SQLiteDatabase.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oWXb0lCNdxm72O3wDzydyShXb3" />
@@ -36,6 +46,8 @@
     <option name="showLibraryContents" value="true" />
   </component>
   <component name="PropertiesComponent">
+    <property name="DebuggerViewTab_PTCS_FirstProportionKey" value="0.35026455" />
+    <property name="DebuggerViewTab_PTCS_LastProportionKey" value="0.0" />
     <property name="Discover.Launch.Via.Unity" value="true" />
     <property name="RunOnceActivity.OpenProjectViewOnStart" value="true" />
     <property name="RunOnceActivity.ShowReadmeOnStart" value="true" />
@@ -52,10 +64,10 @@
       </option>
       <method v="2" />
     </configuration>
-    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost">
+    <configuration name="Attach to Unity Editor" type="UNITY_DEBUG_RUN_CONFIGURATION" factoryName="Unity Debug" show_console_on_std_err="false" show_console_on_std_out="false" port="50000" address="localhost" ignored-value-for-modified-check="996">
       <option name="allowRunningInParallel" value="false" />
       <option name="listenPortForConnections" value="false" />
-      <option name="pid" />
+      <option name="pid" value="996" />
       <option name="selectedOptions">
         <list />
       </option>

@@ -19,12 +19,9 @@
               <e p="SQLiteDatabaseAsset.cs" t="Include" />
               <e p="SQLiteTableAsset.cs" t="Include" />
             </e>
-            <e p="Dispatcher" t="Include">
-              <e p="Singleton.cs" t="Include" />
-              <e p="UnityMainThreadDispatcher.cs" t="Include" />
-            </e>
             <e p="Editor" t="Include">
               <e p="EditorGUILayoutCustom.cs" t="Include" />
+              <e p="SQLiteDatabaseAssetEditor.cs" t="Include" />
               <e p="SQLiteTableAssetEditor.cs" t="Include" />
             </e>
             <e p="ISQLiteDatabase.cs" t="Include" />

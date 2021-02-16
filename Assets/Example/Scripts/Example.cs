@@ -18,7 +18,7 @@ namespace Example.Scripts
         public void GetEntities()
         {
             SQLiteDatabase database = new SQLiteDatabase("database.db");
-            database.ShowTable(database.GetAll<Entity>()[0]);
+            database.ShowTable<Entity>();
 
             Debug.Log(string.Join(", ", database.GetAll<Entity>().Select(x => x.Id + "\n" + x.Name + "\n" + x.Position)));
         }

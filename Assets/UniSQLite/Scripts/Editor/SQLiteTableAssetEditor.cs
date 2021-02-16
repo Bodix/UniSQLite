@@ -13,15 +13,15 @@ namespace UniSQLite.Editor
         public override void OnInspectorGUI()
         {
             SQLiteTableAsset asset = (SQLiteTableAsset) target;
-            object table = asset.Table;
-            
-            foreach (PropertyInfo property in GetProperties(table)) 
-                EditorGUILayoutCustom.PropertyInfoField(property, asset.Table);
+            object[] rows = asset.Rows;
+
+            foreach (object row in rows)
+                using (new EditorGUILayout.VerticalScope(GUI.skin.box))
+                    foreach (PropertyInfo property in GetProperties(row))
+                        EditorGUILayoutCustom.PropertyInfoField(property, row);
 
             if (GUILayout.Button("Insert"))
                 asset.Insert();
-            if (GUILayout.Button("Delete"))
-                asset.Delete();
         }
 
         private IEnumerable<PropertyInfo> GetProperties(object table)
