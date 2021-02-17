@@ -18,15 +18,7 @@ namespace UniSQLite.Assets
                 DeleteAsset();
         }
 
-        public void Close()
-        {
-            string _name = name;
-            
-            if (DeleteAsset())
-                Debug.Log($"Database \"{_name}\" successfully closed");
-        }
-
-        private bool DeleteAsset()
+        public bool DeleteAsset()
         {
             string path = AssetDatabase.GetAssetPath(this);
             

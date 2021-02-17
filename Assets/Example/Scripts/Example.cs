@@ -34,7 +34,7 @@ namespace Example.Scripts
         private void ClearContainer()
         {
             foreach (Transform child in container) 
-                Destroy(child);
+                Destroy(child.gameObject);
         }
     }
 }

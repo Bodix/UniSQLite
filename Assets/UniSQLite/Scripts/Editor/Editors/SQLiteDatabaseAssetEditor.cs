@@ -10,9 +10,9 @@ namespace UniSQLite.Editor.Editors
         public override void OnInspectorGUI()
         {
             SQLiteDatabaseAsset asset = (SQLiteDatabaseAsset) target;
-
+            
             if (GUILayout.Button("Close"))
-                asset.Close();
+                asset.DeleteAsset();
         }
     }
 }
