@@ -10,7 +10,8 @@ namespace UniSQLite
 {
     // TO DO:
     // 1. Make support for property fields with built-in types in asset editor.
-    // 2. Make reverting method with re-getting all rows.`
+    // 2. Make rows creation and deletion inside table asset.
+    // 3. Make reverting method with re-getting all rows.
 
     [InitializeOnLoad]
     public static class UniSQLite

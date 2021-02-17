@@ -8,6 +8,10 @@ namespace Example.Scripts
     {
         [SerializeField]
         private Button button = null;
+        [SerializeField]
+        private Transform container = null;
+        [SerializeField]
+        private EntityView entityPrefab = null;
 
         private void Awake()
         {
@@ -18,8 +22,19 @@ namespace Example.Scripts
         public void GetEntities()
         {
             SQLiteDatabase database = new SQLiteDatabase("database.db");
+            
+            ClearContainer();
+            Entity[] entities = database.GetAll<Entity>();
+            foreach (Entity entity in entities) 
+                Instantiate(entityPrefab, container).Initialize(entity);
 
             database.ShowTable<Entity>();
+        }
+
+        private void ClearContainer()
+        {
+            foreach (Transform child in container) 
+                Destroy(child);
         }
     }
 }

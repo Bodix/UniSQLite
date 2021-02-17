@@ -28,7 +28,11 @@ namespace UniSQLite.Assets
 
         private bool DeleteAsset()
         {
-            return AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(this));
+            string path = AssetDatabase.GetAssetPath(this);
+            
+            DestroyImmediate(this, true);
+            
+            return AssetDatabase.DeleteAsset(path);
         }
     }
 }
