@@ -6,6 +6,9 @@ using UnityEditor;
 using UnityEngine;
 using SQLite;
 using UniSQLite.Assets;
+#if !UNITY_EDITOR
+using UnityEngine.Networking
+#endif
 
 namespace UniSQLite
 {
@@ -18,20 +21,26 @@ namespace UniSQLite
         public SQLiteDatabase(string path, SQLiteOpenFlags openFlags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create)
         {
             name = Path.GetFileNameWithoutExtension(path);
+            path = path.Contains(Application.dataPath) ? path : Path.Combine(Application.streamingAssetsPath, path);
 
 #if !UNITY_EDITOR
-            string copyPath = $"{Application.persistentDataPath}/{Path.GetFileNameWithoutExtension(path)} (Copy){Path.GetExtension(path)}";
+            string copyPath = Path.Combine(Application.persistentDataPath,
+                $"{Path.GetFileNameWithoutExtension(path)} (Copy){Path.GetExtension(path)}");
+
             if (!File.Exists(copyPath))
             {
-                byte[] bytes = File.ReadAllBytes(path);
+                UnityWebRequest request = UnityWebRequest.Get(path);
                 
-                File.WriteAllBytes(copyPath, bytes);
+                request.SendWebRequest();
+                while (!request.isDone)
+                {
+                }
+            
+                File.WriteAllBytes(copyPath, request.downloadHandler.data);
             }
             
             Connection = new SQLiteConnection(copyPath, openFlags);
 #else
-            path = path.Contains(Application.dataPath) ? path : $"{Application.streamingAssetsPath}/{path}";
-
             Connection = new SQLiteConnection(path, openFlags);
 #endif
         }
