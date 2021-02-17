@@ -3,6 +3,7 @@ using UnityEngine;
 
 namespace UniSQLite.Assets
 {
+#if UNITY_EDITOR
     public class SQLiteDatabaseAsset : ScriptableObject
     {
         private bool playmodeOnly;
@@ -27,4 +28,5 @@ namespace UniSQLite.Assets
             return path == string.Empty || AssetDatabase.DeleteAsset(path);
         }
     }
+#endif
 }

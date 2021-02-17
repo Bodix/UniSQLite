@@ -38,8 +38,8 @@
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/EntityView.cs" />
       <option value="$PROJECT_DIR$/Assets/Example/Scripts/Example.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Editor/Editors/SQLiteDatabaseAssetEditor.cs" />
-      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
       <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/Assets/SQLiteDatabaseAsset.cs" />
+      <option value="$PROJECT_DIR$/Assets/UniSQLite/Scripts/UniSQLite.cs" />
     </changedPaths>
   </component>
   <component name="ProjectId" id="1oWXb0lCNdxm72O3wDzydyShXb3" />
@@ -86,7 +86,7 @@
       <option name="presentableId" value="Default" />
       <updated>1613403387684</updated>
       <workItem from="1613403390596" duration="8527000" />
-      <workItem from="1613560038792" duration="6756000" />
+      <workItem from="1613560038792" duration="7155000" />
     </task>
     <servers />
   </component>

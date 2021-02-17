@@ -13,11 +13,14 @@ namespace UniSQLite
     // 2. Make rows creation and deletion inside table asset.
     // 3. Make reverting method with re-getting all rows.
 
+#if UNITY_EDITOR
     [InitializeOnLoad]
+#endif
     public static class UniSQLite
     {
         private static Dictionary<Type, Mapper> _mappers;
 
+#if UNITY_EDITOR
         static UniSQLite()
         {
             EditorApplication.playModeStateChanged += state =>
@@ -30,6 +33,7 @@ namespace UniSQLite
                 }
             };
         }
+#endif
 
         private static Dictionary<Type, Mapper> mappers =>
             _mappers ?? (_mappers = InitializeMapperTypes());

@@ -5,6 +5,7 @@ using UnityEngine;
 
 namespace UniSQLite.Assets
 {
+#if UNITY_EDITOR
     public class SQLiteTableAsset : ScriptableObject
     {
         [SerializeReference]
@@ -37,4 +38,5 @@ namespace UniSQLite.Assets
             Initialize(initialRows);
         }
     }
+#endif
 }
