@@ -1,5 +1,4 @@
 ﻿using System.Globalization;
-using System.Linq;
 using UnityEngine;
 
 namespace UniSQLite.Mappers
@@ -8,9 +7,12 @@ namespace UniSQLite.Mappers
     {
         protected override Vector3 Deserialize(string text)
         {
-            if (!string.IsNullOrEmpty(text))
+            if (text != string.Empty)
             {
-                string[] vectorValues = text.Split(',').ToArray();
+                if (text.StartsWith("(") && text.EndsWith(")")) 
+                    text = text.Substring(1, text.Length - 2);
+
+                string[] vectorValues = text.Split(',');
 
                 return new Vector3(
                     float.Parse(vectorValues[0], CultureInfo.InvariantCulture.NumberFormat),
@@ -25,7 +27,7 @@ namespace UniSQLite.Mappers
 
         protected override string Serialize(Vector3 obj)
         {
-            return obj.ToString().Replace("(", "").Replace(")", "");
+            return obj.ToString();
         }
     }
 }

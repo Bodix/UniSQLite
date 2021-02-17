@@ -1,18 +1,34 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using UniSQLite.Assets;
 using UniSQLite.Mappers;
+using UnityEditor;
+using UnityEngine;
 
 namespace UniSQLite
 {
     // TO DO:
     // 1. Make support for property fields with built-in types in asset editor.
-    // 2. Make reverting method with re-getting all rows.
-    // 3. Make auto-destruction of playmode assets after recompiling too.
+    // 2. Make reverting method with re-getting all rows.`
 
+    [InitializeOnLoad]
     public static class UniSQLite
     {
         private static Dictionary<Type, Mapper> _mappers;
+
+        static UniSQLite()
+        {
+            EditorApplication.playModeStateChanged += state =>
+            {
+                SQLiteDatabaseAsset[] assets = Resources.FindObjectsOfTypeAll<SQLiteDatabaseAsset>();
+                foreach (SQLiteDatabaseAsset asset in assets)
+                {
+                    if (state == PlayModeStateChange.ExitingPlayMode)
+                        asset.DeleteAssetIfPlaymodeOnly();
+                }
+            };
+        }
 
         private static Dictionary<Type, Mapper> mappers =>
             _mappers ?? (_mappers = InitializeMapperTypes());
@@ -30,6 +46,11 @@ namespace UniSQLite
                 mappersDictionary.Add(mapperType.BaseType.GenericTypeArguments[0], (Mapper) Activator.CreateInstance(mapperType));
 
             return mappersDictionary;
+        }
+
+        public static void AddMapper(Type forType, Mapper mapper)
+        {
+            mappers.Add(forType, mapper);
         }
 
         public static bool HasMapperFor(Type type)

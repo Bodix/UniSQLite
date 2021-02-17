@@ -18,7 +18,7 @@ namespace UniSQLite
         public SQLiteDatabase(string path, SQLiteOpenFlags openFlags = SQLiteOpenFlags.ReadWrite | SQLiteOpenFlags.Create)
         {
             name = Path.GetFileNameWithoutExtension(path);
-            
+
 #if !UNITY_EDITOR
             string copyPath = $"{Application.persistentDataPath}/{Path.GetFileNameWithoutExtension(path)} (Copy){Path.GetExtension(path)}";
             if (!File.Exists(copyPath))
@@ -28,10 +28,10 @@ namespace UniSQLite
                 File.WriteAllBytes(copyPath, bytes);
             }
             
-            Connection = new SQLiteConnection(path, copyPath);
+            Connection = new SQLiteConnection(copyPath, openFlags);
 #else
             path = path.Contains(Application.dataPath) ? path : $"{Application.streamingAssetsPath}/{path}";
-            
+
             Connection = new SQLiteConnection(path, openFlags);
 #endif
         }

@@ -10,17 +10,12 @@ namespace UniSQLite.Assets
         private void Awake()
         {
             playmodeOnly = Application.isPlaying;
-            
-            EditorApplication.playModeStateChanged += state =>
-            {
-                if (state == PlayModeStateChange.ExitingPlayMode && playmodeOnly) 
-                    DeleteAsset();
-            };
         }
 
-        public bool DeleteAsset()
+        public void DeleteAssetIfPlaymodeOnly()
         {
-            return AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(this));
+            if (playmodeOnly)
+                DeleteAsset();
         }
 
         public void Close()
@@ -29,6 +24,11 @@ namespace UniSQLite.Assets
             
             if (DeleteAsset())
                 Debug.Log($"Database \"{_name}\" successfully closed");
+        }
+
+        private bool DeleteAsset()
+        {
+            return AssetDatabase.DeleteAsset(AssetDatabase.GetAssetPath(this));
         }
     }
 }
