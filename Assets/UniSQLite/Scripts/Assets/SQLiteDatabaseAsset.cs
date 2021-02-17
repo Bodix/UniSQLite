@@ -6,7 +6,7 @@ namespace UniSQLite.Assets
     public class SQLiteDatabaseAsset : ScriptableObject
     {
         private bool playmodeOnly;
-        
+
         private void Awake()
         {
             playmodeOnly = Application.isPlaying;
@@ -21,10 +21,10 @@ namespace UniSQLite.Assets
         public bool DeleteAsset()
         {
             string path = AssetDatabase.GetAssetPath(this);
-            
+
             DestroyImmediate(this, true);
-            
-            return AssetDatabase.DeleteAsset(path);
+
+            return path == string.Empty || AssetDatabase.DeleteAsset(path);
         }
     }
 }
